@@ -1,0 +1,5 @@
+urxvt*foreground: white
+urxvt*background: black
+urxvt*scrollBar: false
+urxvt*font: xft:DejaVu Sans Mono for Powerline :pixelsize=14
+URxvt.letterSpace: -1
