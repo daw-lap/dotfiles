@@ -182,6 +182,9 @@ exec --no-startup-id xrandr --output HDMI1 --mode 1920x1080 --primary
 #open browser
 bindsym $mod+b exec $browser
 
+#lock screen
+bindsym $mod+o exec i3lock -c 000000
+
 bar {
     font pango:DejaVu Sans Mono 12
     status_command i3status --config .i3/i3status.conf
