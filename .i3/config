@@ -12,7 +12,7 @@ gaps outer 1
 
 # Basics
 
-set $mod Mod4
+set $mod Mod1
 set $browser chromium
 set $term i3-sensible-terminal
 
