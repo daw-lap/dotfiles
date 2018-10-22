@@ -12,7 +12,7 @@ gaps outer 1
 
 # Basics
 
-set $mod Mod1
+set $mod Mod4
 set $browser chromium
 set $term i3-sensible-terminal
 
@@ -178,6 +178,9 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightnes
 
 #resolution with xrandr
 exec --no-startup-id xrandr --output HDMI1 --mode 1920x1080 --primary
+
+#wallpaper
+exec --no-startup-id feh --bg-scale ~/wallpaper/1.jpg
 
 #open browser
 bindsym $mod+b exec $browser
