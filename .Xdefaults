@@ -3,3 +3,9 @@ urxvt*background: black
 urxvt*scrollBar: false
 urxvt*font: xft:DejaVu Sans Mono for Powerline :pixelsize=14
 URxvt.letterSpace: -1
+/* transparency */
+urxvt*depth: 32
+urxvt*background: rgba:0000/0000/0200/c800
+
+urxvt*transparent: true
+urxvt*shading: 8
