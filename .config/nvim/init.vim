@@ -16,7 +16,11 @@ if dein#load_state('~/.cache/dein')
                 \'on_event':'VimEnter',
                 \'hook_post_source':'call plugins#denite#setup#postSource()'
                 \})
-    call dein#add('ozelentok/denite-gtags')
+    call dein#add('ozelentok/denite-gtags',
+                \{
+                \'on_event':'VimEnter',
+                \'hook_post_source':'call plugins#denite_gtags#setup#postSource()'
+                \})
 
     "file manager
     call dein#add('Shougo/defx.nvim')
