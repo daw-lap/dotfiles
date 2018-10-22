@@ -13,7 +13,6 @@ if dein#load_state('~/.cache/dein')
     call dein#add('Shougo/deoplete.nvim')
     call dein#add('Shougo/denite.nvim',
                 \{
-                \'name':'denite',
                 \'on_event':'VimEnter',
                 \'hook_post_source':'call plugins#denite#setup#postSource()'
                 \})
