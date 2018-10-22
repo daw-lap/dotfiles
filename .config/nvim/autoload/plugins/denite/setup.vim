@@ -1,7 +1,7 @@
-function plugins#denite#setup#postSource()
+function! plugins#denite#setup#postSource()
     call s:buffer()
 endfunction
 
-function s:buffer()
+function! s:buffer()
     noremap <leader>b :Denite buffer<CR>
 endfunction
