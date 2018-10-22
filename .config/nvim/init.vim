@@ -23,7 +23,11 @@ if dein#load_state('~/.cache/dein')
                 \})
 
     "file manager
-    call dein#add('Shougo/defx.nvim')
+    call dein#add('Shougo/defx.nvim',
+                \{
+                \'on_event':'VimEnter',
+                \'hook_post_source':'call plugins#defx#setup#postSource()',
+                \})
 
     "commentary
     call dein#add('tpope/vim-commentary')
