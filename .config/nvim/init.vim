@@ -1,5 +1,5 @@
 if &compatible
-    set nocompatible
+set nocompatible
 endif
 
 " dein settings
@@ -56,6 +56,9 @@ set number
 
 nnoremap <silent> <Right> :bn <CR>
 nnoremap <silent> <Left> :bp <CR>
+
+nnoremap <silent> <C-w>> :10winc > <CR>
+nnoremap <silent> <C-w>< :10winc < <CR>
 
 let mapleader=','
 
