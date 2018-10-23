@@ -54,6 +54,9 @@ set shiftwidth=4
 set expandtab
 set number
 
+nnoremap <silent> <Right> :bn <CR>
+nnoremap <silent> <Left> :bp <CR>
+
 let mapleader=','
 
 " globals
