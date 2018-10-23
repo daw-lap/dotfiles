@@ -32,14 +32,17 @@ if dein#load_state('~/.cache/dein')
     "commentary
     call dein#add('tpope/vim-commentary')
 
+    "enhanced cpp highlighting
+    call dein#add('bfrg/vim-cpp-modern')
+
     if !has('nvim')
         call dein#add('roxma/nvim-yarp')
         call dein#add('roxma/vim-hug-neovim-rpc')
     endif
 
     if dein#check_install()
-        call dein#install()
         call dein#update()
+        call dein#install()
     endif
 
     call dein#end()
