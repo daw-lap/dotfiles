@@ -23,6 +23,7 @@ if dein#load_state('~/.cache/dein')
                 \'on_event':'VimEnter',
                 \'hook_post_source':'call plugins#denite_gtags#setup#postSource()'
                 \})
+    call dein#add('airblade/vim-gitgutter')
 
     "file manager
     call dein#add('Shougo/defx.nvim',
