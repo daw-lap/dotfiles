@@ -2,6 +2,8 @@ if &compatible
 set nocompatible
 endif
 
+let mapleader=','
+
 " dein settings
 set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 
@@ -63,7 +65,6 @@ nnoremap <silent> <Left> :bp <CR>
 nnoremap <silent> <C-w>> :10winc > <CR>
 nnoremap <silent> <C-w>< :10winc < <CR>
 
-let mapleader=','
 
 " globals
 let g:deoplete#enable_at_startup = 1
