@@ -169,15 +169,15 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-mode "xrandr" {
-    bindsym $mod+h exec "xrandr --output HDMI1 --auto; xrandr --output LVDS1 --off"
-    bindsym $mod+l exec "xrandr --output LVDS1 --auto; xrandr --output HDMI1 --off"
+set $mode_xrandr select display :[h]dmi | [l]aptop
+bindsym $mod+x mode "$mode_xrandr"
+mode "$mode_xrandr" {
+    bindsym h exec --no-startup-id "xrandr --output HDMI1 --auto; xrandr --output LVDS1 --off", mode "default"
+    bindsym l exec --no-startup-id "xrandr --output LVDS1 --auto; xrandr --output HDMI1 --off", mode "default"
     bindsym Return mode "default"
     bindsym Escape mode "default"
     bindsym $mod+x mode "default"
 }
-
-bindsym $mod+x mode "xrandr"
 
 set $mode_system select : [l]ock | [e]xit | [r]eboot | power [o]ff | [Esc]ape
 bindsym Mod1+F4 mode "$mode_system"
