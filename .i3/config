@@ -179,6 +179,16 @@ mode "xrandr" {
 
 bindsym $mod+x mode "xrandr"
 
+set $mode_system select : [l]ock | [e]xit | [r]eboot | power [o]ff | [Esc]ape
+bindsym Mod1+F4 mode "$mode_system"
+mode "$mode_system" {
+    bindsym l exec --no-startup-id i3lock -c 000000, mode "default"
+    bindsym e exec --no-startup-id i3-msg exit, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym o exec --no-startup-id systemctl poweroff, mode "default"
+    bindsym Escape mode "default"
+}
+
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec "amixer -q sset Master,0 1+ unmute"
 bindsym XF86AudioLowerVolume exec "amixer -q sset Master,0 1- unmute"
@@ -198,12 +208,6 @@ bindsym $mod+b exec $browser
 
 #printscreen
 bindsym Print exec gnome-screenshot
-
-#lock screen
-bindsym $mod+o exec i3lock -c 000000
-
-#shutdown
-bindsym $mod+Shift+o exec shutdown now
 
 bar {
     font pango:DejaVu Sans Mono 12
