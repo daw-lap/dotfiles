@@ -211,6 +211,6 @@ bindsym Print exec gnome-screenshot
 
 bar {
     font pango:DejaVu Sans Mono 12
-    status_command i3status --config .i3/i3status.conf
+    status_command i3status --config .config/i3/i3status.conf
     tray_output primary
 }
