@@ -7,6 +7,10 @@ let mapleader=','
 " dein settings
 set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 
+function! IsKrling()
+    return match(hostname(), 'krling') != -1
+endfunction
+
 if dein#load_state('~/.cache/dein') 
     call dein#begin('~/.cache/dein')
     call dein#add('~/.cache/dein')
@@ -25,19 +29,19 @@ if dein#load_state('~/.cache/dein')
                 \})
     call dein#add('airblade/vim-gitgutter')
 
-    "file manager
-    call dein#add('Shougo/defx.nvim',
-                \{
-                \'on_event':'VimEnter',
-                \'hook_post_source':'call plugins#defx#setup#postSource()',
-                \})
-
     "commentary
     call dein#add('tpope/vim-commentary')
 
     "enhanced cpp highlighting
     call dein#add('bfrg/vim-cpp-modern')
 
+    if !IsKrling()
+        call dein#add('Shougo/defx.nvim',
+                    \{
+                    \'on_event':'VimEnter',
+                    \'hook_post_source':'call plugins#defx#setup#postSource()',
+                    \})
+    endif
     if !has('nvim')
         call dein#add('roxma/nvim-yarp')
         call dein#add('roxma/vim-hug-neovim-rpc')
