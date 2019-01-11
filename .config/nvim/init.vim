@@ -1,15 +1,16 @@
 if &compatible
-set nocompatible
+    set nocompatible
 endif
 
 let mapleader=','
 
-" dein settings
-set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
-
+"##### FUNCTIONS #####
 function! IsKrling()
     return match(hostname(), 'krling') != -1
 endfunction
+
+"##### shougo/dein plugin manager #####
+set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 
 if dein#load_state('~/.cache/dein') 
     call dein#begin('~/.cache/dein')
@@ -35,13 +36,13 @@ if dein#load_state('~/.cache/dein')
     "enhanced cpp highlighting
     call dein#add('bfrg/vim-cpp-modern')
 
-    if !IsKrling()
-        call dein#add('Shougo/defx.nvim',
-                    \{
-                    \'on_event':'VimEnter',
-                    \'hook_post_source':'call plugins#defx#setup#postSource()',
-                    \})
-    endif
+    call dein#add('Shougo/defx.nvim',
+                \{
+                \'if':'!IsKrling()',
+                \'on_event':'VimEnter',
+                \'hook_post_source':'call plugins#defx#setup#postSource()',
+                \})
+
     if !has('nvim')
         call dein#add('roxma/nvim-yarp')
         call dein#add('roxma/vim-hug-neovim-rpc')
