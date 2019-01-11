@@ -9,6 +9,10 @@ function! IsKrling()
     return match(hostname(), 'krling') != -1
 endfunction
 
+function! VimrcIsCplane()
+    return filereadable('./.config_fsmr3') && isdirectory('./C_Application')
+endfunction
+
 "##### shougo/dein plugin manager #####
 set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 
@@ -26,6 +30,13 @@ if dein#load_state('~/.cache/dein')
                 \'on_event':'VimEnter',
                 \'hook_post_source':'call plugins#unite#setup#postSource()'
                 \})
+    call dein#add('hewes/unite-gtags',
+                \{
+                \'if':'IsKrling()',
+                \'on_event':'VimEnter',
+                \'on_ft':["cpp", "c"],
+                \'hook_post_source':'call plugins#unite_gtags#setup#postSource()'
+                \})
     call dein#add('Shougo/denite.nvim',
                 \{
                 \'if':'!IsKrling()',
@@ -37,6 +48,29 @@ if dein#load_state('~/.cache/dein')
                 \'if':'!IsKrling()',
                 \'on_event':'VimEnter',
                 \'hook_post_source':'call plugins#denite_gtags#setup#postSource()'
+                \})
+    call dein#add('matfranczyk/vtbox.vim',
+                \{
+                \'name':'vtbox',
+                \'if':'IsKrling()',
+                \'depends':'unite',
+                \'on_event':'VimEnter',
+                \'hook_source':'call plugins#vtbox#setup#before_source()'
+                \})
+    call dein#add('matfranczyk/highlighter.vim')
+    "unite - gtags fork of matfranczy
+    call dein#add('https://gitlab.com/matfranczy/gtags.vim',
+                \{ 'if':'VimrcIsCplane()' })
+    call dein#add('https://gitlab.dynamic.nsn-net.net/mfranczy/cplane.vim.git',
+                \{
+                \'if':'VimrcIsCplane()',
+                \'name':'cplane',
+                \'depends':['unite', 'vtbox'],
+                \
+                \'on_event':'VimEnter',
+                \'hook_source':'call plugins#cplane#setup#post_source()',
+                \
+                \'make':'git submodule update --recursive'
                 \})
 
     "commentary
