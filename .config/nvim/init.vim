@@ -20,15 +20,16 @@ if dein#load_state('~/.cache/dein')
     call dein#add('Shougo/deoplete.nvim')
     call dein#add('Shougo/denite.nvim',
                 \{
+                \'if':'!IsKrling()',
                 \'on_event':'VimEnter',
                 \'hook_post_source':'call plugins#denite#setup#postSource()'
                 \})
     call dein#add('ozelentok/denite-gtags',
                 \{
+                \'if':'!IsKrling()',
                 \'on_event':'VimEnter',
                 \'hook_post_source':'call plugins#denite_gtags#setup#postSource()'
                 \})
-    call dein#add('airblade/vim-gitgutter')
 
     "commentary
     call dein#add('tpope/vim-commentary')
