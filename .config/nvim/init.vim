@@ -18,6 +18,14 @@ if dein#load_state('~/.cache/dein')
 
     " completing words
     call dein#add('Shougo/deoplete.nvim')
+
+    call dein#add('Shougo/unite.vim',
+                \{
+                \'name':'unite',
+                \'if':'IsKrling()',
+                \'on_event':'VimEnter',
+                \'hook_post_source':'call plugins#unite#setup#postSource()'
+                \})
     call dein#add('Shougo/denite.nvim',
                 \{
                 \'if':'!IsKrling()',
