@@ -28,6 +28,10 @@ function! VimrcSetVimInfo(path)
     endif
 endfunction
 
+function! VimrcGetCachePath()
+    return g:vimrc_cache_path
+endfunction
+
 function! VimrcEnsureDirectory(path)
     if !isdirectory(a:path)
         call mkdir(a:path, 'p')
@@ -120,9 +124,9 @@ if dein#load_state('~/.cache/dein')
                 \})
     call dein#add('Shougo/vimfiler.vim',
                 \{
-                \ 'on_event' : 'VimEnter',
-                \ 'hook_source' : 'call plugins#vimFiler#setup#before_source()',
-                \ 'hook_post_source': 'call plugins#vimFiler#setup#after_source()'
+                \'on_event':'VimEnter',
+                \'hook_source':'call plugins#vimFiler#setup#before_source()',
+                \'hook_post_source':'call plugins#vimFiler#setup#after_source()'
                 \})
     call dein#add('matfranczyk/vtbox.vim',
                 \{
