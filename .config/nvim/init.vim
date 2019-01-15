@@ -124,6 +124,7 @@ if dein#load_state('~/.cache/dein')
                 \})
     call dein#add('Shougo/vimfiler.vim',
                 \{
+                \'if':'IsKrling()',
                 \'on_event':'VimEnter',
                 \'hook_source':'call plugins#vimFiler#setup#before_source()',
                 \'hook_post_source':'call plugins#vimFiler#setup#after_source()'
