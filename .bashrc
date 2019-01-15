@@ -20,7 +20,8 @@ function is_work_username() {
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 
-TERM=xterm
+# TERM=xterm
+export TERM=xterm-256color
 
 if is_work_username; then
     source_file $HOME/work_linux_settings/bashrc_work_specific.sh
