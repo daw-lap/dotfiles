@@ -203,7 +203,6 @@ if dein#load_state('~/.cache/dein')
     call dein#save_state()
 endif
 
-
 syntax on 
 
 "spaces and tabs
