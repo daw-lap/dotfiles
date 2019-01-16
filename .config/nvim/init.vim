@@ -173,6 +173,11 @@ if dein#load_state('~/.cache/dein')
 
     "enhanced cpp highlighting
     call dein#add('bfrg/vim-cpp-modern')
+    call dein#add('octol/vim-cpp-enhanced-highlight',
+                \{
+                \'on_event':'VimEnter',
+                \'hook_post_source':'call plugins#cpp_enhanced_highlight#setup#postSource()'
+                \})
 
     "enable make in vim using custom makefile
     call dein#add('tpope/vim-dispatch')

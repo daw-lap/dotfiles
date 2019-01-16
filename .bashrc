@@ -20,7 +20,6 @@ function is_work_username() {
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 
-# TERM=xterm
 export TERM=xterm-256color
 
 if is_work_username; then
