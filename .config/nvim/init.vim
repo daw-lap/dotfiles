@@ -122,12 +122,27 @@ if dein#load_state('~/.cache/dein')
                 \'on_event':'VimEnter',
                 \'hook_post_source':'call plugins#denite_gtags#setup#postSource()'
                 \})
+    "git
+    call dein#add('airblade/vim-gitgutter',
+                \{
+                \'on_event':'VimEnter',
+                \'hook_post_source':'call plugins#gitgutter#setup#postSource()'
+                \})
+    call dein#add('tpope/vim-fugitive')
+    "auto close parentheses
+    call dein#add('cohama/lexima.vim')
     call dein#add('Shougo/vimfiler.vim',
                 \{
                 \'if':'IsKrling()',
                 \'on_event':'VimEnter',
                 \'hook_source':'call plugins#vimFiler#setup#before_source()',
                 \'hook_post_source':'call plugins#vimFiler#setup#after_source()'
+                \})
+    call dein#add('aklt/plantuml-syntax')
+    call dein#add('gustafj/vim-ttcn',
+                \{
+                \'on_event':'VimEnter',
+                \'hook_post_source':'call plugins#vim_ttcn#setup#postSource()'
                 \})
     call dein#add('matfranczyk/vtbox.vim',
                 \{
