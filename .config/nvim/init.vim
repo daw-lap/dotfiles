@@ -1,5 +1,5 @@
 if &compatible
-    set nocompatible
+set nocompatible
 endif
 
 let mapleader=','
@@ -40,7 +40,7 @@ endfunction
 
 function! VimrcIsLocalCacheUsed()
     return g:vimrc_cache_path == g:vimrc_cache_local_path
-      \ || g:vimrc_cache_path == g:vimrc_cache_hybrid_path
+    \ || g:vimrc_cache_path == g:vimrc_cache_hybrid_path
 endfunction
 
 function! VimrcGetFirstValidDirectory(...)
@@ -55,30 +55,30 @@ endfunction
 
 function! VimrcIsWorkspace()
     return g:vimrc_cache_path == g:vimrc_cache_local_path
-      \ || g:vimrc_cache_path == g:vimrc_cache_hybrid_path
+                \ || g:vimrc_cache_path == g:vimrc_cache_hybrid_path
 endfunction
 
 if !exists('s:cache_configured_flag')
     call VimrcEnsureDirectory(g:vimrc_cache_global_path)
 
     let g:vimrc_cache_path = VimrcGetFirstValidDirectory(
-                                \ g:vimrc_cache_local_path,
-                                \ g:vimrc_cache_hybrid_path,
-                                \ g:vimrc_cache_global_path)
+                \ g:vimrc_cache_local_path,
+                \ g:vimrc_cache_hybrid_path,
+                \ g:vimrc_cache_global_path)
 
     if !VimrcIsLocalCacheUsed()
         command! -nargs=0 VimrcSetupLocalCache :
-            \  try
-            \|      call VimrcEnsureDirectory(g:vimrc_cache_local_path)
-            \| catch
-            \|      try
-            \|          call VimrcEnsureDirectory(g:vimrc_cache_hybrid_path)
-            \|      catch
-            \|          call s:throw("[settings:cache] cannot create local path")
-            \|      endtry
-            \| endtry
-            \| call input("local cache created, please restart vim")
-            \| confirm qa
+                    \  try
+                    \| call VimrcEnsureDirectory(g:vimrc_cache_local_path)
+                    \| catch
+                        \| try
+                            \| call VimrcEnsureDirectory(g:vimrc_cache_hybrid_path)
+                            \| catch
+                                \| call s:throw("[settings:cache] cannot create local path")
+                        \| endtry
+                    \| endtry
+                    \| call input("local cache created, please restart vim")
+                    \| confirm qa
     endif
 
     call VimrcSetVimInfo(g:vimrc_cache_path) | let s:cache_configured_flag = 1
@@ -88,7 +88,7 @@ endif
 "##### shougo/dein plugin manager #####
 set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 
-if dein#load_state('~/.cache/dein') 
+if dein#load_state('~/.cache/dein')
     call dein#begin('~/.cache/dein')
     call dein#add('~/.cache/dein')
 
@@ -131,6 +131,11 @@ if dein#load_state('~/.cache/dein')
     call dein#add('tpope/vim-fugitive')
     "auto close parentheses
     call dein#add('cohama/lexima.vim')
+    call dein#add('ntpeters/vim-better-whitespace',
+                \{
+                \'on_event':'VimEnter',
+                \'hook_source':'call plugins#vim_better_whitespace#setup#postSource()'
+                \})
     call dein#add('Shougo/vimfiler.vim',
                 \{
                 \'if':'IsKrling()',
@@ -203,7 +208,7 @@ if dein#load_state('~/.cache/dein')
     call dein#save_state()
 endif
 
-syntax on 
+syntax on
 
 "spaces and tabs
 set tabstop=4 "number of visual spaces per TAB
@@ -224,6 +229,8 @@ set incsearch "search as characters entered
 set hlsearch "highlight matches
 "turn off search highlight
 nnoremap <leader><space> :nohlsearch<CR>
+"remove trailing whitespaces
+nnoremap <C-space> :%s/\s\+$//e<CR>
 
 "##### buffers #####
 
@@ -257,7 +264,7 @@ function! __vimrc_cache_info()
         return "CPlane::repository"
     endif
 
-   if VimrcIsWorkspace()
+    if VimrcIsWorkspace()
         return "[local:cache] ".g:vimrc_cache_path
     endif
     return "[global:cache] ".g:vimrc_cache_path
