@@ -277,6 +277,8 @@ augroup VimrcBuffersSettingsAutoCmd
     autocmd Filetype qf     call __vimrc_qf_buffers()
     autocmd Filetype cpp,c  call __vimrc_c_buffers()
     autocmd Filetype ttcn   call __vimrc_ttcn_buffers()
+    autocmd FileType make   setlocal noexpandtab
+    autocmd BufNewFile,BufRead *_SCT.k3.txt set filetype=log
 augroup END
 
 augroup VimrcGlobalSettingsAutoCmd
@@ -293,6 +295,7 @@ autocmd BufNewFile,BufRead *.out setfiletype log
 
 highlight ColorColumn ctermbg=red
 
+nnoremap <space>l :set filetype=log<CR>
 nnoremap <silent> <Right> :bn <CR>
 nnoremap <silent> <Left> :bp <CR>
 
