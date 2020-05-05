@@ -1,11 +1,20 @@
-urxvt*foreground: white
-urxvt*background: black
-urxvt*scrollBar: false
-urxvt*font: xft:DejaVu Sans Mono for Powerline :pixelsize=14
-URxvt.letterSpace: -1
+URxvt*foreground: white
+URxvt*background: black
+URxvt*scrollBar: false
 /* transparency */
-urxvt*depth: 32
-urxvt*background: rgba:0000/0000/0200/c800
+URxvt*depth: 32
+URxvt*background: rgba:0000/0000/0200/c800
 
-urxvt*transparent: true
-urxvt*shading: 8
+!-- Xft settings --!
+Xft.dpi:        96
+Xft.antialias:  true
+Xft.rgba:       rgb
+Xft.hinting:    true
+Xft.hintstyle:  hintfull
+
+!-- Fonts --!
+URxvt*font:xft:Monospace:pixelsize=15
+URxvt*boldfont:xft:Monospace-Bold:pixelsize=15
+
+URxvt*transparent: true
+URxvt*shading: 8
