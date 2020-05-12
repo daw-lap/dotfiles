@@ -39,8 +39,8 @@ endfunction
 
 function! __vimrc_ttcn_buffers()
     setlocal colorcolumn=130
-    nnoremap <buffer><F3><C-]>
-    nnoremap <buffer><F2><C-T>
+    nnoremap <buffer><F3> <C-]>
+    nnoremap <buffer><F2> <C-T>
     set tags=/var/fpwork/dlapczyn/bts_sc_cplane/tags
 endfunction
 
