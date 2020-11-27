@@ -1,27 +1,17 @@
-#
-# ~/.bashrc
-#
+#bashrc
 
-function source_file() {
-    if [ -f $1 ]; then
-        source $1
-    else
-        echo "$1 doesn't exist, cannot be sourced"
-    fi
-}
-
-function is_work_username() {
-    [[ "${USER}" = "dlapczyn" ]]
-}
-
-# If not running interactively, don't do anything
+#if not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
 alias ls='ls --color=auto'
-PS1='[\u@\h \W]\$ '
 
-export TERM=xterm-256color
+# if [ -f /etc/bashrc ]; then
+#     . /etc/bashrc
+# fi
 
-if is_work_username; then
-    source_file $HOME/work_linux_settings/bashrc_work_specific.sh
-fi
+export TERM="screen-256color"
+
+[[ "${USER}" = "dlapczyn" ]] && source $HOME/work_linux_settings/bashrc_work_specific.sh
+
+[ -f ~/.bash_libs/prompt.bash ] && source ~/.bash_libs/prompt.bash
+
