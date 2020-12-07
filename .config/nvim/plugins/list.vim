@@ -10,6 +10,7 @@ call plug#begin('$HOME/.local/share/nvim/plugged')
     Plug 'gustafj/vim-ttcn'
     Plug 'matfranczyk/highlighter.vim'
     Plug 'jiangmiao/auto-pairs'
+    Plug 'morhetz/gruvbox'
 call plug#end()
 
 source $HOME/.config/nvim/plugins/deoplete.vim
@@ -18,3 +19,4 @@ source $HOME/.config/nvim/plugins/defx.vim
 source $HOME/.config/nvim/plugins/gitgutter.vim
 source $HOME/.config/nvim/plugins/vim_cpp_enhanced_highlight.vim
 source $HOME/.config/nvim/plugins/vim_ttcn.vim
+source $HOME/.config/nvim/plugins/gruvbox.vim
