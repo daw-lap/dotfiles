@@ -11,6 +11,7 @@ call plug#begin('$HOME/.local/share/nvim/plugged')
     Plug 'matfranczyk/highlighter.vim'
     Plug 'jiangmiao/auto-pairs'
     Plug 'morhetz/gruvbox'
+    Plug 'tpope/vim-fugitive'
 call plug#end()
 
 source $HOME/.config/nvim/plugins/deoplete.vim
