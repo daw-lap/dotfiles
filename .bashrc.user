@@ -1,1 +1,2 @@
 [ -f $HOME/.bashrc.prompt ] && source $HOME/.bashrc.prompt
+[ -f $HOME/.bashrc.vars ] && source $HOME/.bashrc.vars
