@@ -12,6 +12,7 @@ call plug#begin('$HOME/.local/share/nvim/plugged')
     Plug 'jiangmiao/auto-pairs'
     Plug 'morhetz/gruvbox'
     Plug 'tpope/vim-fugitive'
+    Plug 'Jakski/vim-yaml'
 call plug#end()
 
 source $HOME/.config/nvim/plugins/deoplete.vim
