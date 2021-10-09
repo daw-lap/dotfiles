@@ -39,3 +39,4 @@ source $HOME/.config/nvim/plugins/lsp.vim
 
 " source $HOME/.config/nvim/plugins/vim_cpp_enhanced_highlight.vim
 source $HOME/.config/nvim/plugins/vim_cpp_modern.vim
+source $HOME/.config/nvim/plugins/parentheses.vim
