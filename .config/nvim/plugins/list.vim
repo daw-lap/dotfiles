@@ -7,7 +7,6 @@ call plug#begin('$HOME/.local/share/nvim/plugged')
     Plug 'gustafj/vim-ttcn'
     Plug 'matfranczyk/highlighter.vim'
     Plug 'jiangmiao/auto-pairs'
-    Plug 'morhetz/gruvbox'
     Plug 'junegunn/rainbow_parentheses.vim'
     Plug 'yamatsum/nvim-cursorline'
 "git
@@ -16,7 +15,6 @@ call plug#begin('$HOME/.local/share/nvim/plugged')
 "utilities
     Plug 'bronson/vim-trailing-whitespace'
 "programming languages
-    " Plug 'octol/vim-cpp-enhanced-highlight'
     Plug 'bfrg/vim-cpp-modern'
 "fzf
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -26,6 +24,8 @@ call plug#begin('$HOME/.local/share/nvim/plugged')
 "lsp
     Plug 'neovim/nvim-lspconfig'
     Plug 'nvim-lua/completion-nvim'
+"layout
+    Plug 'morhetz/gruvbox'
 call plug#end()
 
 source $HOME/.config/nvim/plugins/deoplete.vim
@@ -37,6 +37,5 @@ source $HOME/.config/nvim/plugins/gruvbox.vim
 source $HOME/.config/nvim/plugins/fzf.vim
 source $HOME/.config/nvim/plugins/lsp.vim
 
-" source $HOME/.config/nvim/plugins/vim_cpp_enhanced_highlight.vim
 source $HOME/.config/nvim/plugins/vim_cpp_modern.vim
 source $HOME/.config/nvim/plugins/parentheses.vim
