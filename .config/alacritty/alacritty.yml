@@ -13,3 +13,10 @@ background_opacity: 0.9
 selection:
   save_to_clipboard: true
 
+debug:
+  render_time: false
+  persistent_logging: false
+  log_level: OFF
+  print_events: false
+  ref_test: false
+
