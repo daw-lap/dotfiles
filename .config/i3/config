@@ -2,15 +2,11 @@
 #
 # inspired by https://pastebin.com/ARcPefNV
 
-# # #
-# i3-gaps settings
-# # #
-hide_edge_borders both
-for_window[class="^.*"] border pixel 0
-
+hide_edge_borders smart
+default_border pixel 3
 # Basics
 
-set $mod Mod4
+set $mod Mod1
 set $browser firefox
 
 set $term LIBGL_ALWAYS_SOFTWARE=1 alacritty
@@ -53,10 +49,10 @@ bindsym $mod+k focus up
 bindsym $mod+l focus right
 
 # alternatively, for virtual machine
-bindsym Mod1+h focus left
-bindsym Mod1+j focus down
-bindsym Mod1+k focus up
-bindsym Mod1+l focus right
+# bindsym Mod1+h focus left
+# bindsym Mod1+j focus down
+# bindsym Mod1+k focus up
+# bindsym Mod1+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
