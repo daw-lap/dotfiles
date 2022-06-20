@@ -8,3 +8,4 @@ end
 oh-my-posh init fish --config $HOME/.poshthemes/patriksvensson.omp.json | source
 
 fish_add_path $HOME/dev-helper-functions
+fish_add_path $HOME/.local/bin
