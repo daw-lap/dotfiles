@@ -18,10 +18,10 @@ window.opacity: 0.9
 selection:
   save_to_clipboard: true
 
-shell:
-  program: /bin/fish
-  args:
-    - --login
+# shell:
+#   program: /bin/fish
+#   args:
+#     - --login
 
 debug:
   render_time: false
