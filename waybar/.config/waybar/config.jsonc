@@ -1,0 +1,56 @@
+{
+  "layer": "top",
+  "modules-center": ["hyprland/workspaces"],
+  "modules-right": ["tray", "group/hardware", "group/system", "clock"],
+  "sway/window": {
+    "max-length": 50
+  },
+  "clock": {
+    "format-alt": "{:%a, %d. %b  %H:%M}"
+  },
+  "group/hardware": {
+    "orientation": "horizontal",
+    "modules": [
+      "disk",
+      "cpu",
+      "memory"
+    ]
+  },
+  "group/system": {
+    "orientation": "horizontal",
+    "modules": [
+      "network"
+    ]
+  },
+  "hyprland/workspaces": {
+    "on-click": "activate",
+    "format": "{icon}",
+    "format-icons": {
+      "default": "☐",
+      "active": "☑",
+      "urgent": "☠"
+    }
+  },
+  "memory": {
+    "format": "  {used} | {total} [GB]"
+  },
+  "cpu": {
+    "format": "  {usage}%"
+  },
+  "disk": {
+    "format": "  {used} | {total} [GB]"
+  },
+  "network": {
+    "format": "{ifname}",
+    "format-ethernet": "  {ifname}",
+    "format-disconnected": "",
+    "tooltip": true
+  },
+
+  "clock": {
+    "timezone": "Europe/Warsaw",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format-alt": " {:%d/%m/%Y}",
+    "format": "󰥔 {:%H:%M}"
+  }
+}

@@ -1,0 +1,49 @@
+@import "./gruvbox.css";
+@define-color mycolor #42b4d6;
+
+* {
+  border: none;
+  font-family: Meslo;
+}
+
+window#waybar {
+  background: none;
+  opacity: 0.9;
+}
+
+.module {
+  background: @black;
+  opacity: 0.9;
+  border-radius: 15px;
+  border: 2px solid @mycolor;
+  font-weight: 500;
+  color: @orange;
+  padding: 0 20px 0 20px;
+  margin: 0 1rem 0 1rem;
+}
+
+#network {
+  /*margin-right: 1rem;*/
+}
+
+#memory {
+}
+
+#cpu {
+  /*margin-right: 1rem;*/
+}
+
+#workspaces {
+  font-size: 25px;
+}
+
+#workspaces button.active {
+  color: @orange;
+}
+
+#workspaces button:hover {
+  color: @green;
+  background: @black;
+  border-radius: 15px;
+}
+
