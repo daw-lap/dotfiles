@@ -1,5 +1,7 @@
 local M = {}
 
+local gcc_path = os.getenv('GCC_PATH')
+
 vim.diagnostic.config({
   virtual_text = false,
   signs = true,
@@ -32,9 +34,14 @@ local on_attach_clangd = function(client, bufnr)
 end
 
 function M:configure()
+  clangd_command = {'clangd', '--clang-tidy'}
+  if gcc_path then
+    table.insert(clangd_command, '--query-driver=' .. gcc_path)
+  end
+
   require('lspconfig')['clangd'].setup {
     on_attach = on_attach_clangd,
-    cmd = {'clangd','--query-driver=/home/dawlap/.sdk/sysroots/x86_64-acu6sdk-linux/usr/bin/aarch64-acu6-linux/aarch64-acu6-linux-g++', '--clang-tidy'},
+    cmd = clangd_command,
   }
 
   require('lspconfig')['pyright'].setup {
