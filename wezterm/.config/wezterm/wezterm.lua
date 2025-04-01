@@ -4,6 +4,8 @@ local config = wezterm.config_builder()
 
 config.color_scheme = 'Apprentice (Gogh)'
 
+config.window_background_opacity = 0.95
+
 config.keys = {
   {key = '1', mods = 'ALT', action = wezterm.action.ActivateTab(0)},
   {key = '2', mods = 'ALT', action = wezterm.action.ActivateTab(1)},
